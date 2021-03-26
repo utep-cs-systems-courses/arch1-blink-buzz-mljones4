@@ -25,13 +25,6 @@ void buzzer_set_period(short cycles) /* buzzer clock = 2MHz.  (period of 1k resu
   CCR1 = cycles >> 1;		/* one half cycle */
 }
 
-void buzzer_update()
-{
-  if (switch_state_changed){
-    (switch4_state_down || switch3_state_down) ? buzzer_set_period(1000) : buzzer_set_period(0);
-  }
-  switch_state_changed = 0;
-}
     
     
   

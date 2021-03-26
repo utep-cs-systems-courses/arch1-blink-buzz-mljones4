@@ -23,7 +23,6 @@ switch_init()			/* setup switch */
   P2OUT |= SWITCHES;		/* pull-ups for switches */
   P2DIR &= ~SWITCHES;		/* set switches' bits for input */
   switch_update_interrupt_sense();
-  //led_update();
 }
 
 void
@@ -37,8 +36,4 @@ switch_interrupt_handler()
   switch4_state_down = (p2val & SW4) ? 0 : 1; /* 0 when SW4 is up */
   
   switch_state_changed = 1;
-
-  enableWDTInterrupts();	/* enable periodic interrupt */
-  led_update_switches();
-  buzzer_update();
 }

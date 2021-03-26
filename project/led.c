@@ -15,7 +15,7 @@ void led_init()
   //  led_update();
 }
 
-void led_update_interrupt(){
+void led_update(){
     if (led_changed) {
     char ledFlags = redVal[red_on] | greenVal[green_on];
     
@@ -26,7 +26,7 @@ void led_update_interrupt(){
 
 }
 
-void led_update_switches()
+/*void led_update_switches()
 {
   if (switch_state_changed) {
     char ledFlags = 0;
@@ -36,6 +36,6 @@ void led_update_switches()
     
     P1OUT &= (0xff - LEDS) | ledFlags; // clear bit for off leds
     P1OUT |= ledFlags;		     // set bit for on leds
-  }
-}
+    }
+    }*/
 

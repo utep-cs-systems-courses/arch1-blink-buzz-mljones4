@@ -11,6 +11,10 @@ int main(void) {
   led_init();
   buzzer_init();
 
+  buzzer_set_period(0);
+
+  enableWDTInterrupts();
+  
   or_sr(0x18);		/* CPU off, GIE on */
 }
 

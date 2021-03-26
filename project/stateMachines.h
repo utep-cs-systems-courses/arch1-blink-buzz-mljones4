@@ -3,4 +3,6 @@
 
 void state_advance();
 
+extern unsigned char limit;
+
 #endif // included
